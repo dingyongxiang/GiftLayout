@@ -53,8 +53,8 @@ class GiftLayoutView : LinearLayout {
     private fun initGiftView() {
         orientation = LinearLayout.VERTICAL
         giftNumAnim = NumAnim()
-        val animIn = ObjectAnimator.ofFloat( this,"translationX", -1200f, 0f)
-        animIn.duration = 800
+        val animIn = ObjectAnimator.ofFloat(this, "translationX", -1200f, 0f)
+        animIn.duration = 500
         transition.setAnimator(LayoutTransition.APPEARING, animIn)
 
         val animOut = ObjectAnimator.ofFloat(this, "alpha", 1f, 0.8f, 0f)
@@ -95,12 +95,12 @@ class GiftLayoutView : LinearLayout {
 
             }
             // 如果礼物类型是大礼物 得到大礼物布局
-            if (giftModel.getGiftLevel() > 1) {
+            giftView = if (giftModel.getGiftLevel() > 1) {
                 //获取大礼物的View的布局
-                giftView = addBigGiftView()
+                addBigGiftView()
             } else {
                 //获取小礼物的View的布局
-                giftView = addSmallGiftView()
+                addSmallGiftView()
             }
             giftView.tag = tag/*设置view标识*/
 
@@ -182,7 +182,7 @@ class GiftLayoutView : LinearLayout {
             val anim2 = ObjectAnimator.ofFloat(view, "scaleY", 1.3f, 1.0f)
             val animSet = AnimatorSet()
             lastAnimator = animSet
-            animSet.duration = 800
+            animSet.duration = 500
             animSet.interpolator = OvershootInterpolator()
             animSet.playTogether(anim1, anim2)
             animSet.start()
@@ -233,8 +233,7 @@ class GiftLayoutView : LinearLayout {
     }*/
 
     override fun onDetachedFromWindow() {
-        if (timer != null)
-            timer!!.cancel()
+        timer?.cancel()
         super.onDetachedFromWindow()
     }
 }
