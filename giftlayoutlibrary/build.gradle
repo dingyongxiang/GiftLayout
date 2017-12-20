@@ -7,7 +7,7 @@ apply plugin: 'com.jfrog.bintray'
 
 // 这个version是区分library版本的，因此当我们需要更新library时记得修改这个version
 // 这个version影响后面的引用
-version = "0.0.2"
+version = "0.0.3"
 
 android {
     compileSdkVersion 26
@@ -74,9 +74,9 @@ bintray {
     configurations = ['archives']
     pkg {
         repo = "maven"
-        name = "GiftLayout"   //发布到JCenter上的项目名字
+        name = "giftlayout"   //发布到JCenter上的项目名字
         websiteUrl = siteUrl
-        vcsUrl = gitUrl
+        vcsUrl = siteUrl
         licenses = ["Apache-2.0"]
         publish = true
     }
