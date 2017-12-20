@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">GiftLayout</string>
+
+
+    <string name="gift_1">掌声</string>
+    <string name="gift_2">奖杯</string>
+    <string name="gift_3">玫瑰花</string>
+    <string name="gift_4">金话筒</string>
+    <string name="gift_5">灵光一现</string>
+    <string name="gift_6">热情火焰</string>
+    <string name="gift_7">iphoneX</string>
+    <string name="gift_8">星中偶像</string>
+    <string name="gift_9">男神</string>
+    <string name="gift_10">女神</string>
+
 </resources>
