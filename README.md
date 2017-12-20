@@ -57,8 +57,8 @@
         m_gift_layout.addGiftView(GiftModel)
    ```
 
-   Download
-   ----
+  Download
+  ----
    Gradle：
    ```
      dependencies {
