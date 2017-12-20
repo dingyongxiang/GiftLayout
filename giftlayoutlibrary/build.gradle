@@ -32,7 +32,7 @@ android {
 
 def siteUrl = 'https://github.com/dingyongxiang/GiftLayout'   // 项目的主页
 def gitUrl = 'https://github.com/dingyongxiang/GiftLayout.git'   // Git仓库的url
-group = "yifeiyuan.library.crashcatcher"            // Maven Group ID for the artifact，一般填你唯一的包名
+group = "com.yongxiang.giftlayout.giftlayoutlibrary"            // Maven Group ID for the artifact，一般填你唯一的包名
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
@@ -67,7 +67,8 @@ install {
 }
 
 Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
+InputStream inputStream = project.rootProject.file('local.properties').newDataInputStream()
+properties.load(inputStream)
 bintray {
     user = properties.getProperty("bintray.user")
     key = properties.getProperty("bintray.apikey")
@@ -76,7 +77,7 @@ bintray {
         repo = "maven"
         name = "giftlayout"   //发布到JCenter上的项目名字
         websiteUrl = siteUrl
-        vcsUrl = siteUrl
+        vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
         publish = true
     }
